@@ -7,11 +7,11 @@ import java.util.List;
 
 public interface MenuRepository extends Repository<Menu, Integer> {
 
-    void delete(Menu menu);
-
-    List<Menu> findAll();
-
-    Menu findOne(int id);
-
+//    void delete(Menu menu);
+//
+//    List<Menu> findAll();
+//
+//    Menu findMenuBy(int id);
+//
     Menu save(Menu menu);
 }

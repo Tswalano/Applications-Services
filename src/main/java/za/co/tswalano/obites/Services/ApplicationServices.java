@@ -1,28 +1,20 @@
 package za.co.tswalano.obites.Services;
 
-import org.springframework.context.annotation.ComponentScan;
+import org.springframework.stereotype.Service;
 import za.co.tswalano.obites.Modals.CustomerOrder;
 import za.co.tswalano.obites.Modals.Customers;
 import za.co.tswalano.obites.Modals.Menu;
 
 import java.util.List;
 
-@ComponentScan
+@Service
 public interface ApplicationServices {
-
+//  Customers Services
     Customers createCustomer(Customers customer);
-
-    Customers deleteCustomer(int id);
-
+//  Find all users
     List<Customers> findAllCustomers();
 
-    Customers findCustomerById(int id);
+    List<Customers> findAllQuery();
 
-    Customers updateCustomer(Customers customer);
-
-    //    Menu
-    Menu createMenu(Menu menu);
-
-    //    Customer Order
-    CustomerOrder createOrder(CustomerOrder order);
+    List<Customers> findCustomerByCredentials(String u, String p);
 }

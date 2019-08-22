@@ -6,8 +6,6 @@ import org.mindrot.jbcrypt.BCrypt;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
-import za.co.tswalano.userportal.Models.*;
-import za.co.tswalano.userportal.Repositories.*;
 
 import java.sql.Timestamp;
 import java.util.Calendar;

@@ -15,51 +15,28 @@ import java.util.List;
 public class ApplicationServicesImplementation implements ApplicationServices {
 
     @Autowired
-    private CustomerOrderRepository orderRepository;
-    @Autowired
     private CustomerRepository customerRepository;
-    @Autowired
-    private MenuRepository menuRepository;
 
+//    Create Order
     @Override
     public Customers createCustomer(Customers customer) {
         return customerRepository.save(customer);
     }
 
-    @Override
-    public Customers deleteCustomer(int id) {
-        Customers customer = findCustomerById(id);
-        if (customer != null) {
-            customerRepository.delete(customer);
-        }
-        return customer;
-    }
-
+//    find all customers
     @Override
     public List<Customers> findAllCustomers() {
         return customerRepository.findAll();
     }
 
     @Override
-    public Customers findCustomerById(int id) {
-        return customerRepository.findOne(id);
+    public List<Customers> findAllQuery() {
+        return customerRepository.findAllByName();
     }
 
     @Override
-    public Customers updateCustomer(Customers customer) {
-        return customerRepository.save(customer);
-    }
-
-    //    Menu
-    @Override
-    public Menu createMenu(Menu menu) {
-        return menuRepository.save(menu);
-    }
-
-    //    Customer Order
-    @Override
-    public CustomerOrder createOrder(CustomerOrder order) {
-        return orderRepository.save(order);
+    public List<Customers> findCustomerByCredentials(String u, String p) {
+        return customerRepository.findCustomersByUsernameAndPassword(u,p);
     }
 
 }

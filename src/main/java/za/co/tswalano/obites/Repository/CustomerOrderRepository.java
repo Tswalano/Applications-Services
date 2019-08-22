@@ -7,11 +7,11 @@ import java.util.List;
 
 public interface CustomerOrderRepository extends Repository<CustomerOrder, Integer> {
 
-    void delete(CustomerOrder order);
-
-    List<CustomerOrder> findAll();
-
-    CustomerOrder findOne(int id);
-
+//    void delete(CustomerOrder order);
+//
+//    List<CustomerOrder> findAll();
+//
+////    CustomerOrder findCustomerOrderBy(int id);
+//
     CustomerOrder save(CustomerOrder order);
 }
